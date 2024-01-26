@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import { NavbarLinkModel } from '../../models/navbar.model'
+import { useShoppingCartContext } from '../../Context'
 const NavBar = () => {
+
+    const context = useShoppingCartContext()
     const activeStyle = 'underline'
     const menu1: NavbarLinkModel[] = [
         {
@@ -57,7 +60,7 @@ const NavBar = () => {
         },
         {
             to: '/shoppcar',
-            text: '🛒',
+            text: `🛒 ${context.count}`,
             className: ''
         },
     ]
