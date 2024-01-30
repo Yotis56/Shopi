@@ -3,11 +3,14 @@ import { Card } from '../../components/Card'
 import { Product } from '../../models/Product.model'
 import { ProductsDetails } from '../../components/ProductDetails'
 import { Modal } from '../../components/Modal'
+import { useApplicationContext } from '../../Context'
+import { CheckoutSideMenu } from '../../components/CheckoutSideMenu'
 
 
 const Home = () => {
     const [data, setData] = useState<Product[]>([])
     const [viewModal, setViewModal] = useState<boolean>(false)
+    const { setViewCart } = useApplicationContext()
 
     useEffect(  () => {
         const retrieveData = async() => {
@@ -23,15 +26,20 @@ const Home = () => {
             <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg mx-auto my-20'>
                 {
                     data?.map( item => (
-                        <Card key={item.id} title={item.title} price={item.price} categoryName={item.category.name} imageUrl={item.images} setViewModal={setViewModal}/>
+                        <Card key={item.id} product={item} setViewModal={setViewModal}/>
                     ))
                 }
             </div>
+            <Modal setCloseModal={setViewCart} isShoppingCart={true}>
+                <CheckoutSideMenu setViewCart={setViewCart} />
+            </Modal>
             {viewModal && 
-                <Modal setViewModal={setViewModal}>
-                    <ProductsDetails />
+                <Modal setCloseModal={setViewModal}>
+                    <ProductsDetails setViewModal={setViewModal} />
                 </Modal>
             }
+                
+
         </>
         
     )

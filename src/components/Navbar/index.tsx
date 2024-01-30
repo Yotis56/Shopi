@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import { NavbarLinkModel } from '../../models/navbar.model'
-import { useShoppingCartContext } from '../../Context'
+import { PiShoppingCart } from "react-icons/pi";
+
+import { useApplicationContext } from '../../Context'
+import { IconContext } from 'react-icons';
 const NavBar = () => {
 
-    const context = useShoppingCartContext()
+    const context = useApplicationContext()
     const activeStyle = 'underline'
     const menu1: NavbarLinkModel[] = [
         {
@@ -58,12 +61,11 @@ const NavBar = () => {
             text: 'Sign in',
             className: ''
         },
-        {
-            to: '/shoppcar',
-            text: `🛒 ${context.count}`,
-            className: ''
-        },
     ]
+    const handleCartClick = () => {
+        context.setViewCart(true)
+    }
+
     return (
         <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
             <ul className='flex items-center gap-3'>
@@ -88,6 +90,12 @@ const NavBar = () => {
                         </NavLink>
                     </li>
                 ))}
+                <li className='flex cursor-pointer' onClick={handleCartClick}>
+                    <IconContext.Provider value={{ size: "1.5em"}}>
+                        <PiShoppingCart />
+                    </IconContext.Provider>
+                    {` ${context.shoppingCart.length}`}
+                </li>
             </ul>
         </nav>
     )

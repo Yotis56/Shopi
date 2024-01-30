@@ -5,4 +5,15 @@
     left: -10px;
     right: -10px;
     bottom: -10px;
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+}
+.modal-background.modal_shoppingCart {
+    position: relative;
+    max-width: 0;
+    z-index: 11;
+}
+.modal-background.modal_shoppingCart-open {
+    position: fixed;
 }
