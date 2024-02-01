@@ -2,13 +2,14 @@ import { FC } from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { useApplicationContext } from "../../Context";
+import { CartProduct } from "../../models/Product.model";
 import './styles.css'
 
 export const ProductsDetails: FC<{setViewModal: React.Dispatch<React.SetStateAction<boolean>>}> = ({setViewModal}) => {
 
-    const {selectedProduct, addProductToShoppingcart} = useApplicationContext()
+    const {selectedProduct, addProductToCart} = useApplicationContext()
     const handleButtonClick = () => {
-        addProductToShoppingcart(selectedProduct)
+        addProductToCart(selectedProduct as CartProduct)
     }
 
     return (

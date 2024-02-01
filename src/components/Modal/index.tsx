@@ -16,7 +16,7 @@ const Modal: FC<Parameters> = ({isShoppingCart, children, setCloseModal}) => {
     const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
         // event.target es de tipo EventTarget, pero esa interfaz no contiene nada, ni clases, ni id, ni nada. Para trabajar con el target tengo que hacer una aserción de tipo, diciendole el tipo de elemento HTML 
         const target = event.target as HTMLElement
-        if (target.className.includes('modal-background')) {
+        if (target.classList.contains('modal-background')) {
             setCloseModal(false)
         }
     }

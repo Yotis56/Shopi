@@ -8,3 +8,9 @@ export interface Product {
     images: string[];
     category: Category;
 }
+
+export interface CartProduct extends Product {
+    quantity: number;
+}
+
+export type AppProduct = Product | Record<string, never>

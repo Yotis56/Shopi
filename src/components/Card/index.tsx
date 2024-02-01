@@ -14,7 +14,7 @@ export const Card: FC<Props> = ({product, setViewModal}) => {
     const handleClick = (event: React.MouseEvent<HTMLAreaElement, MouseEvent>) => {
         const target = event.target as HTMLElement
         if (target.id === 'counter') {
-            context.addProductToShoppingcart(product)
+            context.addProductToCart(product)
         } else if (target.id === 'figure') {
             setViewModal(true)
             context.setSelectedProduct(product)
