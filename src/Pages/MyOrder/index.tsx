@@ -3,7 +3,7 @@ import React from 'react'
 const MyOrder = () => {
     return (
         <>
-            <p>MyOrder page under construction</p>
+            <p>MyOrders page under construction</p>
         </>
     )
 }

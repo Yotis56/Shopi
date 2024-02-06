@@ -1,11 +1,13 @@
 import React, {createContext, useContext, useState, FC, ReactNode} from 'react'
 import { AppProduct, Product, CartProduct } from '../models/Product.model';
+import { Order } from '../models/Order.model';
 
 // dentro del estado de la aplicación, los objetos pueden ser productos u objetos vacíos (inicio)
 
 // tipo para poner el en genérico de createContext
 export type contextType = {
     shoppingCart: CartProduct[];
+    setShoppingCart: React.Dispatch<React.SetStateAction<CartProduct[]>>;
     addProductToCart: (newProduct: Product) => void;
     deleteProductFromCart: (productId: number) => void;
     increaseCartQuantity: (productId: number) => void;
@@ -14,6 +16,8 @@ export type contextType = {
     setSelectedProduct: React.Dispatch<React.SetStateAction<AppProduct>>;
     viewCart: boolean, 
     setViewCart: React.Dispatch<React.SetStateAction<boolean>>;
+    orders: Order[];
+    setOrders: React.Dispatch<React.SetStateAction<Order[]>>
 }
 
 export const ApplicationContext = createContext<contextType>({} as contextType)
@@ -23,7 +27,7 @@ export const ApplicationContextProvider: FC<{children: ReactNode}> = ({children}
     const [shoppingCart, setShoppingCart] = useState<CartProduct[]>([])
     const [selectedProduct, setSelectedProduct] = useState<AppProduct>({})
     const [viewCart, setViewCart] = useState<boolean>(false)
-
+    const [orders, setOrders] = useState<Order[]>([])
 
     const addProductToCart = (newProduct: Product) => {
         const product = shoppingCart.find( item => newProduct.id === item.id)
@@ -65,7 +69,8 @@ export const ApplicationContextProvider: FC<{children: ReactNode}> = ({children}
 
     return (
         <ApplicationContext.Provider value={{
-            shoppingCart, 
+            shoppingCart,
+            setShoppingCart,
             addProductToCart,
             deleteProductFromCart,
             increaseCartQuantity,
@@ -73,7 +78,9 @@ export const ApplicationContextProvider: FC<{children: ReactNode}> = ({children}
             selectedProduct,
             setSelectedProduct,
             viewCart,
-            setViewCart
+            setViewCart,
+            orders, 
+            setOrders
         }}>
             {children}
         </ApplicationContext.Provider>

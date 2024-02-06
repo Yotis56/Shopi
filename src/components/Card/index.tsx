@@ -5,7 +5,7 @@ import { Product } from "../../models/Product.model";
 interface Props {
     key: number;
     product: Product;
-    setViewModal: React.Dispatch<React.SetStateAction<boolean>>,
+    setViewModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Card: FC<Props> = ({product, setViewModal}) => {

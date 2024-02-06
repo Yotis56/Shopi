@@ -67,7 +67,7 @@ const NavBar = () => {
     }
 
     return (
-        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
+        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white'>
             <ul className='flex items-center gap-3'>
                 <li className='font-semibold text-lg'>
                     <NavLink to='/'>Shopi</NavLink>
@@ -94,7 +94,12 @@ const NavBar = () => {
                     <IconContext.Provider value={{ size: "1.5em"}}>
                         <PiShoppingCart />
                     </IconContext.Provider>
-                    {` ${context.shoppingCart.length}`}
+                    {
+                        context.shoppingCart.length > 0 && 
+                        <span className='bg-emerald-600 p-px rounded-full text-orange-50 text-xs/[13px] w-[15px] h-[15px] text-center'>
+                                {` ${context.shoppingCart.reduce( (a, b) => a + b.quantity, 0)}`}
+                        </span>
+                    }
                 </li>
             </ul>
         </nav>

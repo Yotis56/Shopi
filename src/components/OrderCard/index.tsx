@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { CartProduct } from '../../models/Product.model'
 import { useApplicationContext } from '../../Context'
+import { FiTrash2 } from "react-icons/fi";
+
 
 export const OrderCard: FC<{product: CartProduct}> = ({product}) => {
 
@@ -25,15 +27,17 @@ export const OrderCard: FC<{product: CartProduct}> = ({product}) => {
                 <img className='w-full h-full rounded-lg object-cover' src={product.images[0]} alt={product.title} />
             </figure>
             <div className="flex flex-col justify-between h-[90%]">
-                <p className='text-sm font-light w-36'>{product.title}</p>
+                <p className='text-sm font-light w-36 text-ellipsis'>{product.title}</p>
                 <div className="pb-2 flex">
-                    <button className='plus h-6 w-6 border border-slate-300 rounded-l-md bg-white' onClick={handleIncreaseQuantity}>+</button>
+                    <button className='minus w-6 h-6 border border-slate-300 rounded-l-md bg-white' onClick={handleDecreaseQuantity}>-</button>
                     <span className='inline-block text-center w-6 h-6 border-y border-slate-200 text-xs leading-6'>{product.quantity}</span>
-                    <button className='minus w-6 h-6 border border-slate-300 rounded-r-md bg-white' onClick={handleDecreaseQuantity}>-</button>
+                    <button className='plus h-6 w-6 border border-slate-300 rounded-r-md bg-white' onClick={handleIncreaseQuantity}>+</button>
                 </div>
             </div>
             <div className="flex flex-col justify-between h-[90%]">
-                <p className='text-xs cursor-pointer pt-2' onClick={handleRemoveItemFromCart}>Remove</p>
+                <p className='cursor-pointer pt-2 ml-auto' onClick={handleRemoveItemFromCart}>
+                    <FiTrash2 />
+                </p>
                 <p className='text-lg font-medium'>{`$ ${product.quantity? product.price * product.quantity : 0}`}</p>
             </div>
         </div>
