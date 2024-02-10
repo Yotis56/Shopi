@@ -32,6 +32,7 @@ const Checkout = () => {
 
     const handleSubmit = () => {
         setOrders([...orders, {
+            orderNumber: Math.ceil(Math.random() * 10000000),
             date: new Date(),
             client: 'ingyotis@gmail.com',
             items: shoppingCart,

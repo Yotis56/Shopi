@@ -1,6 +1,7 @@
 import { CartProduct } from './Product.model'
 
 export interface Order {
+    orderNumber: number;
     date: Date; 
     client: string;
     items: CartProduct[];

@@ -19,8 +19,8 @@ const App = createBrowserRouter(
       <Route path='/checkout' element={ <Checkout />}/>
       <Route path='/my-account' element={ <MyAccount />}/>
       <Route path='/my-order' element={ <MyOrder />}/>
+      <Route path='/my-order/:id' element={ <MyOrder />}/>
       <Route path='/my-orders' element={ <MyOrders />}/>
-      <Route path='/my-orders/last' element={ <MyOrders />}/>
       <Route path='/sign-in' element={ <SignIn />}/>
       <Route path='*' element={ <NotFound />}/>
     </Route >

@@ -52,9 +52,9 @@ export const CheckoutInformation: FC<Props> = ({ setShippingPrice, setShippingIn
                         <label htmlFor="country" className="text-sm">Country</label>
                         <select name="country" id="country" className="border border-solid border-slate-400 rounded h-9 flex-1 pl-3.5" value={shippingInformation.country} onChange={handleFormChange}>
                             <option value="" ></option>
-                            <option value="colombia">Colombia</option>
-                            <option value="ecuador">Ecuador</option>
-                            <option value="peru">Perú</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Peru">Perú</option>
                         </select>
                     </div>
                     <div className="flex flex-col w-3/6">

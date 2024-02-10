@@ -1,0 +1,17 @@
+table, .shipping-info, .summary-info {
+    /* border-collapse: collapse; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 4px 2px, rgba(0, 0, 0, 0.03) 0px 2px 1px 0px;
+    border-radius: 6px;
+}
+.table-header {
+    border-bottom: 1px solid #cacaca;
+}
+.table-padding {
+    width: 20px;
+}
+tr td {
+    padding: 15px 0;
+}
+.products-table tbody tr:not(:last-child) td:not(:first-child, :last-child){
+    border-bottom: 1px solid #cbd5e1;
+}

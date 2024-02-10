@@ -33,7 +33,7 @@ export const CheckoutSideMenu: FC<{setViewCart: React.Dispatch<React.SetStateAct
             {
                 total > 0 ? 
                 <div className="p-6">
-                    <NavLink to='/my-order'>
+                    <NavLink to='/checkout'>
                         <button className='py-2.5 w-full bg-[#2f4f4f] text-neutral-100 rounded-lg'>{`Checkout: $${total}`}</button>
                     </NavLink>
                 </div>
