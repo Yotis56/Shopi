@@ -41,7 +41,7 @@ const Checkout = () => {
         }])
         setShoppingCart([])
         setViewCart(false)
-        navigate("/")
+        navigate("/my-order/last")
     }
 
     return (

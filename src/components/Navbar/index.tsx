@@ -16,29 +16,29 @@ const NavBar = () => {
         },
         {
             to: '/clothes',
-            text: 'clothes',
+            text: 'Clothes',
             className: ''
         },
         {
             to: '/electronics',
-            text: 'electronics',
+            text: 'Electronics',
             className: ''
         },
         {
             to: '/furnitures',
-            text: 'furnitures',
+            text: 'Furnitures',
             className: ''
         },
         {
-            to: '/toys',
-            text: 'toys',
+            to: '/shoes',
+            text: 'Shoes',
             className: ''
         },
         {
-            to: '/others',
-            text: 'others',
+            to: '/miscelaneous',
+            text: 'Miscelaneous',
             className: ''
-        },
+        }
     ]
     const menu2: NavbarLinkModel[] = [
         {
