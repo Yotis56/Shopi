@@ -15,27 +15,27 @@ const NavBar = () => {
             className: ''
         },
         {
-            to: '/clothes',
+            to: '/products/clothes',
             text: 'Clothes',
             className: ''
         },
         {
-            to: '/electronics',
+            to: '/products/electronics',
             text: 'Electronics',
             className: ''
         },
         {
-            to: '/furnitures',
+            to: '/products/furnitures',
             text: 'Furnitures',
             className: ''
         },
         {
-            to: '/shoes',
+            to: '/products/shoes',
             text: 'Shoes',
             className: ''
         },
         {
-            to: '/miscelaneous',
+            to: '/products/miscelaneous',
             text: 'Miscelaneous',
             className: ''
         }

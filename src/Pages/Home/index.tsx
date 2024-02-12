@@ -31,6 +31,7 @@ const Home = () => {
         setData(jsonData)
     }
 
+    //debería pensar en filtrar tanto por categoría, como por título. Una función que me arme la query dependiendo de lo que <tenga className=""></tenga>
     useEffect(  () => {
         getDataFromApi('https://api.escuelajs.co/api/v1/products?offset=0&limit=20')
     }, [])

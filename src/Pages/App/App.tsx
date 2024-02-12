@@ -16,7 +16,7 @@ const App = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
       <Route path='/' element={<Home />} /> 
-      <Route path='/:category' element={<Home />} /> 
+      <Route path='/products/:category' element={<Home />} /> 
       <Route path='/checkout' element={ <Checkout />}/>
       <Route path='/my-account' element={ <MyAccount />}/>
       <Route path='/my-order' element={ <MyOrder />}/>
